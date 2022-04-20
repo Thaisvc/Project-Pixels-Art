@@ -1,0 +1,22 @@
+.color {
+    border: solid 1px black;
+    height: 100px;
+    width: 100px;
+    display: inline-block;
+}
+
+.pink {
+    background-color: pink;
+}
+
+.black {
+    background-color: black;
+}
+
+.red {
+    background-color: red;
+}
+
+.purple {
+    background-color: rgb(148, 148, 203);
+}
