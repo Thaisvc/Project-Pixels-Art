@@ -22,6 +22,7 @@ function colorPlate() {
     purple.classList = 'color purple';
     pink.classList = 'color pink';
   });
+
   red.addEventListener('click', function () {
     red.style.backgroundColor;
     red.classList = 'color red selected';
@@ -29,6 +30,7 @@ function colorPlate() {
     purple.classList = 'color purple';
     pink.classList = 'color pink';
   });
+
   purple.addEventListener('click', function () {
     purple.style.backgroundColor;
     purple.classList = 'color purple selected';
@@ -36,6 +38,7 @@ function colorPlate() {
     red.classList = 'color red';
     pink.classList = 'color pink';
   });
+
   pink.addEventListener('click', function () {
     pink.classList = 'color pink selected';
     black.classList = 'color black';
@@ -43,10 +46,18 @@ function colorPlate() {
     purple.classList = 'color purple';
     pink.style.backgroundColor;
   });
-  if (red.classList == 'color red selected') {
-    purple.classList = 'color purple ';
-    black.classList.remove('selec');
-  }
 }
 
 colorPlate();
+
+function paint() {
+ let palette = document.querySelectorAll('.pixel');
+for (let key in palette) {
+  let recebe = palette[key];
+  recebe.addEventListener('click', function() {
+    alert("juyhyhyu");
+  });
+}
+
+}
+paint()
