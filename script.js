@@ -1,6 +1,16 @@
-window.onload = function () {};
-
 const selecting = document.querySelector('#pixel-board');
+const pixels = document.getElementsByClassName('pixel');
+
+let selected = document.getElementsByClassName('selected')[0];
+
+
+
+const cssObj = window.getComputedStyle(selected, null);
+let bgColor = cssObj.getPropertyValue("background-color");
+
+ 
+
+
 for (let index = 0; index < 25; index += 1) {
   let generatePixel = index;
   let create = document.createElement('div');
@@ -8,56 +18,22 @@ for (let index = 0; index < 25; index += 1) {
   create.classList.add('pixel');
   selecting.appendChild(create);
 }
-
 function colorPlate() {
-  const black = document.querySelector('.black');
-  const red = document.querySelector('.red');
-  const purple = document.querySelector('.purple');
-  const pink = document.querySelector('.pink');
-
-  black.addEventListener('click', () => {
-    black.style.backgroundColor;
-    black.classList = 'color black selected';
-    red.classList = 'color red';
-    purple.classList = 'color purple';
-    pink.classList = 'color pink';
-  });
-
-  red.addEventListener('click', function () {
-    red.style.backgroundColor;
-    red.classList = 'color red selected';
-    black.classList = 'color black';
-    purple.classList = 'color purple';
-    pink.classList = 'color pink';
-  });
-
-  purple.addEventListener('click', function () {
-    purple.style.backgroundColor;
-    purple.classList = 'color purple selected';
-    black.classList = 'color black';
-    red.classList = 'color red';
-    pink.classList = 'color pink';
-  });
-
-  pink.addEventListener('click', function () {
-    pink.classList = 'color pink selected';
-    black.classList = 'color black';
-    red.classList = 'color red';
-    purple.classList = 'color purple';
-    pink.style.backgroundColor;
-  });
+  paleta = document.getElementsByClassName('color');
+  for (let index = 0; index < paleta.length; index += 1) {
+    let cor = paleta[index];
+    cor.addEventListener('click', function (event) {
+      document.querySelector('.selected').classList.remove('selected');
+      event.target.classList.add('selected');
+    });
+  }
 }
-
 colorPlate();
 
-function paint() {
- let palette = document.querySelectorAll('.pixel');
-for (let key in palette) {
-  let recebe = palette[key];
-  recebe.addEventListener('click', function() {
-    alert("juyhyhyu");
+for (let key in pixels) {
+  let block = pixels[key];
+  block.addEventListener('click', function (event) {
+    event.target.style.backgroundColor = bgColor;
   });
 }
-
-}
-paint()
+ 
