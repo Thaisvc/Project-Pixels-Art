@@ -39,9 +39,20 @@
 .selected{
    
 }
-#clear-board{
+#clear-board { 
     position: absolute;
     top: 190px;
+    background-color: rgb(69, 80, 82);
+    width: 90px;
+    height: 30px;
+    border: none;
+    color: white;
+}
+
+#generate-board{
+    position: absolute;
+    top: 190px;
+    left: 105px;
     background-color: rgb(69, 80, 82);
     width: 90px;
     height: 30px;
