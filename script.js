@@ -3,6 +3,8 @@ window.onload = preto;
 const selecting = document.querySelector('#pixel-board');
 const pixels = document.getElementsByClassName('pixel');
 const selecionado = document.querySelectorAll('.selected')[0];
+const selectButton = document.querySelector('#clear-board');
+
 
 // criando os blocos
 for (let index = 0; index < 25; index += 1) {
@@ -19,8 +21,8 @@ function preto(){
     const cssObj = window.getComputedStyle(selecionado, null);
     let bgColor = cssObj.getPropertyValue('background-color');
     /* document.getElementById('demo').innerHTML = bgColor; */
-    for (let key in pixels) {
-      let square = pixels[key];
+    for (let index =0; index < pixels.length; index += 1) {
+      let square = pixels[index];
       square.addEventListener('click', function(event){
         event.target.style.backgroundColor = bgColor;
       });
@@ -34,8 +36,9 @@ let including = document.addEventListener('click', function(event){
     let selected = document.querySelectorAll('.selected')[0];
     const cssObj = window.getComputedStyle(selected, null);
     let bgColor = cssObj.getPropertyValue('background-color');
-    for (let key in pixels) {
-      let square2 = pixels[key];
+let pixels2 = document.getElementsByClassName('pixel');
+    for (let index =0; index < pixels2.length; index += 1) {
+      let square2 = pixels2[index];
       square2.addEventListener('click', function(event){
         event.target.style.backgroundColor = bgColor;
       });
@@ -56,5 +59,14 @@ function colorPlate() {
   }
 }
 colorPlate();
+
+function clean() {
+  location.reload();
+}
+selectButton.addEventListener('click', clean)
+  
+
+ 
+
 
 
