@@ -7,12 +7,21 @@ const selectButton = document.querySelector('#clear-board');
 
 
 // criando os blocos
-for (let index = 0; index < 25; index += 1) {
-  let create = index;
-  let createDiv = document.createElement('div');
-  createDiv.classList.add('pixel');
-  selecting.appendChild(createDiv);
+function createBlocos(qtd) {
+  const Section = document.getElementById('pixel-board');
+  for (let index = 0; index < qtd; index += 1) {
+    const br = document.createElement('br');
+
+    for (let index = 0; index < qtd; index += 1) {
+      const creatDiv = document.createElement('div');
+      creatDiv.className = 'pixel';
+      Section.appendChild(creatDiv);
+      Section.appendChild(br);
+      creatDiv.style.backgroundColor = 'white';
+    }
+  }
 }
+createBlocos(5);
 
 //iniciando com a cor preta
 function preto(){
