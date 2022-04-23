@@ -1,9 +1,12 @@
 window.onload = preto;
-
+/* location.reload(); */
 const selecting = document.querySelector('#pixel-board');
 const pixels = document.getElementsByClassName('pixel');
 const selecionado = document.querySelectorAll('.selected')[0];
 const selectButton = document.querySelector('#clear-board');
+const ButtonVqv = document.querySelector('#generate-board');
+let Input = document.querySelector('#board-size');
+
 
 
 // criando os blocos
@@ -11,7 +14,6 @@ function createBlocos(qtd) {
   const Section = document.getElementById('pixel-board');
   for (let index = 0; index < qtd; index += 1) {
     const br = document.createElement('br');
-
     for (let index = 0; index < qtd; index += 1) {
       const creatDiv = document.createElement('div');
       creatDiv.className = 'pixel';
@@ -69,13 +71,38 @@ function colorPlate() {
 }
 colorPlate();
 
+// limpar paleta
 function clean() {
-  location.reload();
+ for (let index = 0; index < pixels.length; index += 1) {
+   let position = pixels[index];
+   position.style.backgroundColor = 'white';
+ }
+
+
 }
 selectButton.addEventListener('click', clean)
-  
-
  
+// gerar blocos pelo input
+ButtonVqv.addEventListener('click', generatesEdge)
 
+function generatesEdge() {
+  let blocos = Input.value;
 
+if (blocos === ''){
+  alert("Board inválido!") 
+}else if(blocos < 5  ){
+  alert("Board inválido!") 
+
+}else if (blocos > 50){
+  alert("Board inválido!") 
+
+}else{
+  //textContent = Altere o conteúdo textual de um elemento
+  selecting.textContent = '';
+  createBlocos(blocos);
+
+}
+
+}
+ 
 
