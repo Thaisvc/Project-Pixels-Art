@@ -1,7 +1,11 @@
 window.onload = preto;
-/* location.reload(); */
+
 const selecting = document.querySelector('#pixel-board');
 const pixels = document.getElementsByClassName('pixel');
+const black = document.getElementsByClassName('black');
+let pink = document.getElementsByClassName('pink');
+let red = document.getElementsByClassName('red');
+let purple = document.getElementsByClassName('purple');
 const selecionado = document.querySelectorAll('.selected')[0];
 const selectButton = document.querySelector('#clear-board');
 const ButtonVqv = document.querySelector('#generate-board');
@@ -91,18 +95,30 @@ function generatesEdge() {
 if (blocos === ''){
   alert("Board inválido!") 
 }else if(blocos < 5  ){
-  alert("Board inválido!") 
+  blocos = 5;
 
 }else if (blocos > 50){
-  alert("Board inválido!") 
+  blocos = 50;
 
-}else{
+}
   //textContent = Altere o conteúdo textual de um elemento
   selecting.textContent = '';
   createBlocos(blocos);
 
-}
+
 
 }
  
+//gerar cor aleatoria
 
+function gerColor() {
+  const color = document.querySelectorAll('.color');
+  for (let index = 1; index < color.length; index += 1) {
+    //A função Math.floor(x) retorna o menor número inteiro dentre o número "x"
+    //Math.random A função Math.random() retorna um número pseudo-aleatório no intervalo [0, 1] 1x255 rgb
+    //'#' recarrega 
+    color[index].style.backgroundColor = '#' + Math.floor(Math.random() * 255);
+  }
+}
+
+gerColor();
