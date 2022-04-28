@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 window.onload = preto;
 
 const selecting = document.querySelector('#pixel-board');
