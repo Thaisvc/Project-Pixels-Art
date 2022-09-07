@@ -1,9 +1,19 @@
+body {
+    background-image: url('./png-clipart-hand-painted-background-blooming-abstract-shading-brush.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+header{
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .color {
-    border: solid 1px black;
-    height: 100px;
-    width: 100px;
+    border: solid 3px #1ABC9C;
+    height: 80px;
+    width: 80px;
     display: inline-block;
-
 }
 
 .pink {
@@ -22,11 +32,10 @@
     background-color: rgb(148, 148, 203);
 }
 
-#color-palette{
-}
+#color-palette{text-align: center;margin-top: 15px;}
 .pixel{
-    border: solid 1px black;
-     display: inline-block;  
+    border: solid 1px #3498DB;
+    display: inline-block;
     width: 40px;
     height: 40px;
     background-color: white;
@@ -38,39 +47,52 @@
 }
 
 section{
-    position: absolute;
-    top: 250px;
+    display: flex;
+    justify-content: center;
 }
-#clear-board { 
-    position: absolute;
-   
-    background-color: rgb(69, 80, 82);
-    width: 90px;
-    height: 30px;
-    border: none;
-    color: white;
+
+
+
+
+
+#title{
+    text-align: center;
+
+}
+
+
+h1 span {
+    font-size:70px;
+	display: inline-block;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+	background: linear-gradient(to bottom, #1abc9c 50%,#3498db 50%);
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+}
+
+
+.control{display: flex;height: 80px;width: 1334px;justify-content: space-evenly;align-items: center;}
+
+#board-size{
+    width: 118px;
+    border: solid 2px  #1ABC9C;
+    height: 33px;
 }
 
 #generate-board{
-    position: absolute;
-    left: 209px;
+    background-color: #3498DB;
+    width: 134px;
+    height: 40px;
+    color: white;
+    border: solid 3px #1ABC9C;
+}
 
-    background-color: rgb(69, 80, 82);
-    width: 90px;
-    height: 30px;
-    border: none;
+#clear-board {
+    background-color: #3498DB;
+    width: 132px;
+    height: 40px;
+    border: solid 3px #1ABC9C;
     color: white;
 }
-
-#board-size{
-    width: 50px;
-    position: absolute;
-    left: 140px;
-
-    border: solid 2px  rgb(69, 80, 82);
-}
-
-
-
-
-
